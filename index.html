@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aziri clone</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <!-- j query -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+<!-- Demo styles -->
+<style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+
+    body {
+
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        /* background: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+
+    }
+
+    .append-buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .append-buttons button {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid #007aff;
+        color: #007aff;
+        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin: 0 10px;
+        font-size: 13px;
+    }
+
+    .card {
+        height: 70%;
+        width: 100%;
+        /* border: 1px solid black; */
+        /* background-color: #fff; */
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+    .swiper-button-next {
+        height: 50px;
+        width: 50px;
+        color: #fff;
+        background-color: black;
+        border-radius: 50%;
+        opacity: 0.6;
+    }
+
+    .swiper-button-prev {
+        height: 50px;
+        width: 50px;
+        color: #fff;
+        background-color: black;
+        border-radius: 50%;
+        opacity: 0.6;
+    }
+
+    @media screen and (width<1000px) {
+        .swiper {
+            display: none;
+        }
+
+        .swiper-wrapper {
+            display: none;
+        }
+
+
+    }
+</style>
+
+<body>
+    <!-- header start -->
+
+    <div class="topbar">
+        <marquee behavior="" direction="">Free shopping on all prepaid orders</marquee>
+        <span>Cash on delivery and 3 Days easy replacement available
+        </span>
+    </div>
+
+    <nav>
+        <div class="empty"></div>
+
+        <div class="nav_logo">
+            <img src="./images/1702290011457_e739142784404366954f7dc46d6ac750.webp" alt="aa" height="100%" width="100%">
+        </div>
+
+        <div class="nav_icons">
+            <div class="nav_icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="nav_icon"><i class="fa-regular fa-user"></i></div>
+            <div class="nav_icon"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="nav_icon"><i class="fa-brands fa-whatsapp" style="color: green;"></i></div>
+        </div>
+
+    </nav>
+
+    <div class="nav_bottom">
+        <div class="nav_bottom_catagories">
+            <ul>
+                <li id="category">Category<i id="arrowUp" class="fa-solid fa-chevron-up"></i></li>
+                <li>Shipping Policy</li>
+                <li>Payment Policy</li>
+                <li>Return & Refund Policy</li>
+                <li>About Us</li>
+                <li>Follow Aziri on instagram!</li>
+                <li>join whatsapp channel</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="dropdown_menu">
+        <ul>
+            <li>addidas</li>
+            <li>retro 4</li>
+            <li>air jordern's</li>
+            <li>travis scott</li>
+            <li>air forces</li>
+            <li>low dunks</li>
+        </ul>
+    </div>
+
+    <!-- header end -->
+
+    <!-- categories start -->
+
+    <div class="heading1">
+        <h1>Categories</h1>
+    </div>
+
+    <!-- categories end -->
+
+    <!-- Swiper -->
+
+    <div #swiperRef="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="card"><img src="./images/1707295670058_1png.webp" alt="aa" height="100%" width="100%"></div>
+                <div class="brand_name">RETRO 4</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card"><img src="./images/1707295730159_2png.webp" alt="aa" height="100%" width="100%"></div>
+                <div class="brand_name">TRAVIS SCOTT</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card"><img src="./images/1707295695803_3png.webp" alt="aa" height="100%" width="100%"></div>
+                <div class="brand_name">LOW DUNKS</div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card"><img src="./images/1707295741464_4png.webp" alt="aa" height="100%" width="100%"></div>
+                <div class="brand_name">AIR JORDEN'S</div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card"><img src="./images/catretro-1709392565710.webp" alt="aa" height="100%" width="100%">
+                </div>
+                <div class="brand_name">AIR FORCE'S</div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card"><img src="./images/conversecat-1714287686320.webp" alt="aa" height="100%"
+                        width="100%"></div>
+                <div class="brand_name">CONVERSE</div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card"><img src="./images/216064_cat-1712393208114.webp" alt="aa" height="100%" width="100%">
+                </div>
+                <div class="brand_name">ADDIDAS</div>
+            </div>
+
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+
+    <div class="heading1">
+        <h1>MOST PICKS</h1>
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card1">
+            <div><img src="./images/card1.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Dunk Low Gray</span></div>
+            <div><span style="font-weight: 700;">₹1,399</span><del style="margin-left: 30px;">₹1,299</del></div>
+            <div style="padding: 0;"><input type="text" placeholder="Uk6" style="height: 100%; width: 100%;"></div>
+            <div
+                style="border: 1px solid rgb(1, 200, 250); display: grid; place-items: center; color:rgb(1, 200, 250); border-radius: 10px;">
+                <span>+Add</span>
+            </div>
+        </div>
+
+        <div class="card1">
+            <div><img src="./images/card2.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Travis Scott brown</span></div>
+            <div><span style="font-weight: 700;">₹1,399</span><del style="margin-left: 30px;">₹1,299</del></div>
+            <div style="padding: 0;"><input type="text" placeholder="Uk6" style="height: 100%; width: 100%;"></div>
+            <div
+                style="border: 1px solid rgb(1, 200, 250); display: grid; place-items: center; color: rgb(1, 200, 250); border-radius: 10px;">
+                <span>+Add</span>
+            </div>
+        </div>
+
+        <div class="card1">
+            <div><img src="./images/card3.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Dunk low panda</span></div>
+            <div><span style="font-weight: 700;">₹1,399</span><del style="margin-left: 30px;">₹1,299</del></div>
+            <div style="padding: 0;"><input type="text" placeholder="Uk6" style="height: 100%; width: 100%;"></div>
+            <div
+                style="border: 1px solid rgb(1, 200, 250); display: grid; place-items: center; color: rgb(1, 200, 250); border-radius: 10px;">
+                <span>+Add</span>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="heading1" style="font-size: 2rem; font-weight: 600;">Aziri Shoes Review 🤩 👇🏻</div>
+
+    <iframe width="100%" height="615" src="https://www.youtube.com/embed/z6_7nsUs-ik?si=JH6FAClkbxgIHkr2"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <iframe style="margin-top: 30px;" width="100%" height="815"
+        src="https://www.youtube.com/embed/cQk8ojTBLck?si=2Ead-YnrQwDcKcs-" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+    <div class="big_image1">
+        <img src="./images/big_image1.webp" alt="aa" height="100%" width="100%">
+    </div>
+
+    <div class="big_image_2">
+        <img src="./images/big_image2.webp" alt="aa" height="100%" width="100%">
+    </div>
+
+    <div class="big_image_2">
+        <img src="./images/big_image3.webp" alt="aa" height="100%" width="100%">
+    </div>
+
+    <div class="big_image_2">
+        <img src="./images/big_image4.webp" alt="aa" height="100%" width="100%">
+    </div>
+
+    <div class="big_image_2">
+        <img src="./images/big_image5.webp" alt="aa" height="100%" width="100%">
+    </div>
+
+    <div class="heading1">
+        <h1>JORDANS</h1>
+    </div>
+
+    <div class="bottom_cards">
+
+        <div class="bottom_card">
+            <div><img src="./images/bottom_card_1.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>jorden 1 hyper royal high</span></div>
+            <div><span>₹1,399</span> <del style="color: gray; margin-left: 20px;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border:1px solid rgb(1, 200, 250); color:rgb(1, 200, 250); display: grid; place-items: center;">
+                <span>ADD+</span></div>
+        </div>
+
+        <div class="bottom_card">
+            <div><img src="./images/bottom_card_2.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>jorden 1 hyper royal high</span></div>
+            <div><span>₹1,399</span> <del style="color: gray; margin-left: 20px;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border:1px solid rgb(1, 200, 250); color:rgb(1, 200, 250); display: grid; place-items: center;">
+                <span>ADD+</span></div>
+        </div>
+
+        <div class="bottom_card">
+            <div><img src="./images/botttom_card_3.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>jorden 1 hyper royal high</span></div>
+            <div><span>₹1,399</span> <del style="color: gray; margin-left: 20px;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div
+                style="border:1px solid rgb(1, 200, 250); color: rgb(1, 200, 250); display: grid; place-items: center;">
+                <span>ADD+</span></div>
+        </div>
+
+        <div class="bottom_card">
+            <div><img src="./images/bottom_card_4.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>jorden 1 hyper royal high</span></div>
+            <div><span>₹1,399</span> <del style="color: gray; margin-left: 20px;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div
+                style="border:1px solid rgb(1, 200, 250); color: rgb(1, 200, 250); display: grid; place-items: center;">
+                <span>ADD+</span></div>
+        </div>
+
+    </div>
+
+    <div class="big_image_2">
+        <img src="./images/bottom_big_img_1.webp" alt="aa" height="100%" width="100%">
+    </div>
+
+    <div class="big_image_2">
+        <img src="./images/bottom_big_img_2.webp" alt="aa" height="100%" width="100%">
+    </div>
+
+    <div class="big_image_2">
+        <img src="./images/bottom_big_img_3.webp" alt="aa" height="100%" width="100%">
+    </div>
+    
+
+    <div class="bottom_section">
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_1.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid  rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_2.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid  rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_3.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid  rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_4.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid  rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_5.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid  rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_6.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid rgb(1, 200, 250); color :rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_7.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_8.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid rgb(1, 200, 250); color: rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_9.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid  rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+        <div class="bottom_section_card">
+            <div><img src="./images/bottom_section_card_10.webp" alt="aa" height="100%" width="100%"></div>
+            <div><span>Retro 4 black cat leather</span></div>
+            <div><span style="font-weight: 600;">₹1,399</span> <del style="margin-left: 20px; color: gray;">₹1,399</del></div>
+            <div><input type="text" placeholder="Uk6"></div>
+            <div style="border: 1px solid  rgb(1, 200, 250); color:  rgb(1, 200, 250);">Add+</div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="first">
+            <h2>Quick Links</h2>
+            <ul>
+               <div> <li id="underline">Home</li>  </div>
+               <div> <li id="underline">My Account</li>  </div>
+               <div> <li id="underline">My Orders</li></div>
+               <div> <li id="underline">About Us</li></div>
+               <div> <li id="underline">Payment Policy</li></div>
+               <div> <li id="underline">Privacy Policy</li></div>
+               <div> <li id="underline">Return & Refund Policy</li></div>
+               <div> <li id="underline">Shipping Policy</li></div>
+               <div> <li id="underline">Terms and Conditions</li></div>
+            </ul>
+        </div>
+        <div class="second">
+            <h2>Get In Touch</h2>
+            <ul>
+                <div id="second"><i style="font-size: 1.2rem; color: #007aff;" class="fa-solid fa-phone"></i><li id="underline">6377300449</li></div>
+
+                <div id="second"><i style="font-size: 1.2rem; color: #007aff;" class="fa-regular fa-envelope"></i><li id="underline">help.aziri@gmail.com</li></div>
+
+                <div id="second"><i style="font-size: 1.2rem; color: #007aff;" class="fa-regular fa-map"></i><li id="underline">Foy sager road , near ana sagar police chowki Ajmer, Rajasthan - 305001, India</li></div>
+            </ul>
+        </div>
+        <div class="third">
+            <h2>We accept</h2>
+            <img src="./images/aziri.webp" alt="aziri" width="100%">
+        </div>
+        <div class="fourth">
+            <h2>Social</h2>
+            <ul>
+                <div id="fourth"><img src="./images/whatsapp.png" alt="whatsapp"><li id="underline">Whats app</li></div>
+                <div id="fourth"><img src="./images/instagram.png" alt="instagram"><li id="underline">instagram</div>
+            </ul>
+        </div>
+        <p>Copyright © Aziri 2024.All rights reserved.</p>
+    </footer>
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 5,
+            centeredSlides: true,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        var appendNumber = 4;
+        var prependNumber = 1;
+        document
+            .querySelector(".prepend-2-slides")
+            .addEventListener("click", function (e) {
+                e.preventDefault();
+                swiper.prependSlide([
+                    '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+                    '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+                ]);
+            });
+        document
+            .querySelector(".prepend-slide")
+            .addEventListener("click", function (e) {
+                e.preventDefault();
+                swiper.prependSlide(
+                    '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
+                );
+            });
+        document
+            .querySelector(".append-slide")
+            .addEventListener("click", function (e) {
+                e.preventDefault();
+                swiper.appendSlide(
+                    '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
+                );
+            });
+        document
+            .querySelector(".append-2-slides")
+            .addEventListener("click", function (e) {
+                e.preventDefault();
+                swiper.appendSlide([
+                    '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+                    '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+                ]);
+            });
+    </script>
+
+
+    <!-- Initialize Swiper -->
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            // $("#category").click(function () {
+            //     $(".dropdown_menu").css("display", "block");
+            // });
+
+
+            // $("#category").click(function () {
+            //     $(".dropdown_menu").css("display", "block");
+            // });
+
+            $("#category").click(function () {
+                $(".dropdown_menu").toggle();
+                $("#arrowUp").toggleClass('rotate');
+
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>
